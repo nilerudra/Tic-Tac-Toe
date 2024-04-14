@@ -21,10 +21,11 @@ h1 {
 
 .container h4 {
   position: relative;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .container {
+  margin-top: -60px;
   padding: 40px;
   height: 130vh;
   display: flex;
@@ -39,7 +40,7 @@ h1 {
   width: 450px;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .box {
