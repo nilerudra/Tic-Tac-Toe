@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: #f2c14e;
+  --winning-blocks: #4b382d;
+}
+
+body {
+  color: var(--orange);
+  font-family: "Finger Paint", cursive;
+}
+
+h1 {
+  font-size: 54px;
+  text-transform: uppercase;
+}
+
+.container h4 {
+  position: absolute;
+  bottom: 10px; /* Adjust this value to change the distance from the bottom */
+}
+
+.container {
+  padding: 40px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #2d414b;
+  position: relative;
+}
+
+#board {
+  width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.box {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--orange);
+  font-size: 120px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+}
+
+.box:nth-child(3n) {
+  border-right: none;
+}
+
+.box:nth-child(6) ~ .box {
+  border-bottom: none;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: var(--orange);
+  color: #333;
+  border-color: var(--orange);
+  font-size: 18px;
+  transition: 200ms transform;
+  font-weight: 600;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+
+@keyframes celebrate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.win-celebration {
+  animation: celebrate 1s ease-in-out;
+}
