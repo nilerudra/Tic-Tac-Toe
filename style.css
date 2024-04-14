@@ -20,8 +20,8 @@ h1 {
 }
 
 .container h4 {
-  position: absolute;
-  bottom: 10px; /* Adjust this value to change the distance from the bottom */
+  position: relative;
+  margin-top: 20px; /* Adjust this value to change the distance from the bottom */
 }
 
 .container {
