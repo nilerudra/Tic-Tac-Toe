@@ -2,6 +2,12 @@ let title = document.getElementById("title");
 let restartBtn = document.getElementById("restart-btn");
 let boxes = Array.from(document.getElementsByClassName("box"));
 
+var res2 = document.getElementById("con1");
+var res = document.getElementById("con2");
+
+res.innerHTML = '<img src="./confetti-10.gif" alt="">';
+res2.innerHTML = '<img src="./confetti-10.gif" alt="">';
+
 let winner = getComputedStyle(document.body).getPropertyValue(
   "--winning-blocks"
 );
@@ -34,10 +40,20 @@ function boxClicked(e) {
       title.innerText = current_player + " has won!";
       let winning_blocks = playerhaswon();
 
+      res.style.visibility = "visible";
+      res2.style.visibility = "visible";
+
       winning_blocks.forEach((index) => {
         boxes[index].classList.add("win-celebration");
         boxes[index].style.backgroundColor = winner;
       });
+
+      setTimeout(() => {
+        document.getElementById(
+          "board"
+        ).innerHTML = `<img id="win" src=./bb-baby.gif>`;
+      }, 1000);
+
       return;
     }
 
@@ -72,14 +88,7 @@ function playerhaswon() {
 }
 
 restartBtn.addEventListener("click", () => {
-  spaces.fill(null);
-  boxes.forEach((box) => {
-    box.innerText = "";
-    box.style.backgroundColor = "";
-  });
-
-  title.innerText = "Tic Tac Toe";
-  current_player = X_TEXT;
+  window.location.reload();
 });
 
 startGame();
